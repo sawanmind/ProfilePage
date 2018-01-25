@@ -46,22 +46,7 @@ class ProfileCell: UITableViewCell {
     }()
     
     
-    lazy var  bgView: UIView = {
-        let lineView = UIView()
-        lineView.isUserInteractionEnabled = true
-        lineView.translatesAutoresizingMaskIntoConstraints = false
-        lineView.layer.cornerRadius = 22
-        lineView.layer.masksToBounds = true
-        lineView.layer.borderWidth = 0
-        lineView.layer.borderColor = UIColor(white: 0.90, alpha: 1).cgColor
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTextField))
-        tap.numberOfTapsRequired = 1
-        tap.numberOfTouchesRequired = 1
-        lineView.addGestureRecognizer(tap)
-        lineView.becomeFirstResponder()
-        return lineView
-    }()
-    
+
     
     lazy var title: UITextField = {
         let lineView = UITextField()
@@ -89,30 +74,22 @@ class ProfileCell: UITableViewCell {
     
     private  func setupsliderimage(){
         
+   
+       addSubview(iconView)
         
-        contentView.addSubview(bgView)
-        
-        bgView.centerXAnchor.constraint(equalTo: contentView.layoutMarginsGuide.centerXAnchor).isActive = true
-        bgView.centerYAnchor.constraint(equalTo: contentView.layoutMarginsGuide.centerYAnchor).isActive = true
-        bgView.widthAnchor.constraint(equalTo: contentView.layoutMarginsGuide.widthAnchor).isActive = true
-        bgView.heightAnchor.constraint(equalTo: contentView.heightAnchor).isActive = true
-        
-        
-        bgView.addSubview(iconView)
-        
-        iconView.leadingAnchor.constraint(equalTo: bgView.layoutMarginsGuide.leadingAnchor).isActive = true
-        iconView.centerYAnchor.constraint(equalTo: bgView.layoutMarginsGuide.centerYAnchor).isActive = true
+        iconView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 20).isActive = true
+        iconView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         iconView.widthAnchor.constraint(equalToConstant: 21).isActive = true
         iconView.heightAnchor.constraint(equalToConstant: 21).isActive = true
         
         
      
-        bgView.addSubview(title)
+        addSubview(title)
         
         title.leadingAnchor.constraint(equalTo: iconView.trailingAnchor,constant:20).isActive = true
         title.centerYAnchor.constraint(equalTo: iconView.centerYAnchor).isActive = true
-        title.trailingAnchor.constraint(equalTo: bgView.layoutMarginsGuide.trailingAnchor).isActive = true
-        title.heightAnchor.constraint(equalTo: bgView.heightAnchor).isActive = true
+        title.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20).isActive = true
+        title.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
         
         
     }

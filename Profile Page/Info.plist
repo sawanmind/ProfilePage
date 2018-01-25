@@ -33,7 +33,9 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSCameraUsageDescription</key>
-	<string>$(PRODUCT_NAME) wants to access you camera and gallery</string>
+	<string>$(PRODUCT_NAME) wants to access you camera </string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>$(PRODUCT_NAME) wants to access you  gallery</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
